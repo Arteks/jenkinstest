@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build ID') {
             steps {
-                echo "The Build ID is: $(BUILD_ID)"
+                echo "The Build ID is: ${BUILD_ID}"
             }
         }
     }
