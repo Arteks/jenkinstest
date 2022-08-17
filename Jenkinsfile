@@ -2,18 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('docker build') {
+        stage('Hello') {
             steps {
-                script {
-                    sh "docker build -f 02-primer-pipeline/Dockerfile -t caosbinario/homer_page:1.0.0-${BUILD_ID} 02-primer-pipeline"
-                }
+                echo 'Hello World'
             }
         }
-        stage('docker push') {
+        stage('Hello2') {
             steps {
-                script {
-                    sh "docker push caosbinario/homer_page:1.0.0-${BUILD_ID}"
-                }
+                echo 'Hello World2'
+            }
+        }
+        stage('Build ID') {
+            steps {
+                echo "The Build ID is: $(BUILD_ID)"
             }
         }
     }
